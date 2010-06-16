@@ -1,17 +1,10 @@
-#######################################
-# iptables module - disable.pp
-# Puzzle ITC - haerry+puppet(at)puzzle.ch
-# GPLv3
-#######################################
-
-# disable iptables
 class iptables::disable inherits iptables::base {
-    Service[iptables]{
+    Service['iptables'] {
         ensure => stopped,
         enable => false,
         hasstatus => true,
     }
-    Service[ip6tables]{
+    Service['ip6tables'] {
         ensure => stopped,
         enable => false,
         hasstatus => true,
