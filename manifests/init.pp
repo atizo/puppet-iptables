@@ -20,11 +20,13 @@ class iptables {
   service{'iptables':
     ensure => running,
     enable => true,
+    hasstatus => true,
     require => Package['iptables'],
   }
   service{'ip6tables':
     ensure => running,
     enable => true,
+    hasstatus => true,
     require => Package['iptables-ipv6'],
   }
 }
